@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "lint": "./node_modules/.bin/eslint components/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/ZolotoiMalchik/Notedar#readme",
   "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-config-google": "^0.9.1",
     "express": "^4.16.2",
     "http": "0.0.0"
   }
