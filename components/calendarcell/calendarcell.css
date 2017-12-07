@@ -1,0 +1,23 @@
+.calendar__cell {
+	width: 3rem;
+	height: 1rem;
+	/* float: left; */
+}
+.calendar__cell .cell__wrapper {
+	padding: 0.65rem 0.6rem;
+	border: 0.65rem solid #a9f7a9;
+	width: inherit;
+	text-align: center;
+	height: inherit;
+	transition: width 230ms, height 230ms;
+}
+.calendar__cell .cell__wrapper .cell__num {
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+.calendar__cell .cell__wrapper:hover {
+	cursor: pointer;
+	background: lightblue;
+	width: 5rem;
+	/* height: 33px; */
+}
