@@ -1,19 +1,20 @@
-/*import {CalendarCell} from "../../components/calendarcell/CalendarCell";
+/* import {CalendarCell} from "../../components/calendarcell/CalendarCell";
 import {CalendarRow} from "../../components/calendarrow/CalendarRow.js";*/
-import {CalendarTable} from "../../components/calendartable/CalendarTable.js";
+import {CalendarTable} from '../../components/calendartable/CalendarTable.js';
 
 export class Calendar {
-	constructor () {
-		this.el = document.createElement("div");
-		this.el.className = "calendar";		
-		this.months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+	constructor() {
+		this.el = document.createElement('div');
+		this.el.className = 'calendar';
+		this.months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
 		this.date = new Date();
 
+
 		this._setData();
-		//this.el.querySelector(".table__cnt").addEventListener("click", this.onCellClick);
+		this.el.addEventListener("click", this.onCellClick.bind(this));
 	}
 
-	render () {
+	render() {
 		this.el.innerHTML = `<div class="calendar__cnt">
 			<div class="calendar__title">
 				<span class="title__year">${this.titleYear}</span>
@@ -25,26 +26,25 @@ export class Calendar {
 		this.renderTable();
 	}
 
-	renderTable () {
-		new CalendarTable(this.data).insertTable(this.el.querySelector(".table__cnt"));	
+	renderTable() {
+		new CalendarTable(this.data).insertTable(this.el.querySelector('.table__cnt'));
 	}
 
-	insertCalendar (container) {
+	insertCalendar(container) {
 		this.render();
 		container.append(this.el);
 	}
 
-	setDate (date = new Date()) {
+	setDate(date = new Date()) {
 		this.date = date;
 		this._setData();
 		this.render();
 	}
 
-	_setData (date = this.date) {
-		
-		this.titleYear = this.date.getFullYear();		
+	_setData(date = this.date) {
+		this.titleYear = this.date.getFullYear();
 		this._curMonth = this.date.getMonth();
-		this.titleMonth = this.months[this._curMonth];		
+		this.titleMonth = this.months[this._curMonth];
 		this._Date = new Date(this.titleYear, this._curMonth);
 		this._firstDayOfMonth = this._getDay(this._Date);
 
@@ -61,10 +61,10 @@ export class Calendar {
 
 
 		for (let i = 0; i < this._firstDayOfMonth; i += 1) {
-			data.unshift("");
+			data.unshift('');
 		}
 		for (let i = 0; i < lastDay; i += 1) {
-			data.push("");
+			data.push('');
 		}
 
 		for (let i = 0; i < data.length; i += 7) {
@@ -74,7 +74,7 @@ export class Calendar {
 		this.data = mainData;
 	}
 
-	_getDay (date) {
+	_getDay(date) {
 		let day = date.getDay();
 		if (day === 0) {
 			day = 7;
@@ -82,8 +82,17 @@ export class Calendar {
 		return day - 1;
 	}
 
-	_getData () {
+	_getData() {
 		return this.data;
-	} 
-	
+	}
+
+	onCellClick (e) {
+		console.log("CELL CLICK", e.target, e.currentTarget, e.cellClick);
+		if (e.cellClick) {
+			//this.el.classList.add("hidden-calendar");
+
+			let event = new Event("cellClick", {bubbles: true});
+			this.el.dispatchEvent(event);
+		}
+	}
 }

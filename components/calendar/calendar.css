@@ -1,5 +1,6 @@
 .calendar {
  float: left;
+ transition: margin-left 200ms;
 }
 .calendar__title {
  border: 1rem solid #a9f7a9;
@@ -22,4 +23,8 @@
 }
 .table__cnt {
 	width: 100%;
+}
+
+.hidden-calendar {
+	margin-left: -999px;
 }

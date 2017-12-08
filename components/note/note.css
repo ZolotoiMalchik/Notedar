@@ -1,0 +1,9 @@
+.note {
+	margin-left: -999px;
+	transition: margin-left 2000ms;
+	display: none;
+}
+.display {
+	display: block;
+	margin-left: 0;
+}

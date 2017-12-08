@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "lint": "./node_modules/.bin/eslint components/**/*.js"
+    "lint": "./node_modules/.bin/eslint components/**/*.js --fix",
+    "pug": "./node_modules/.bin/pug -c --name-after-file --extension pug.js components/**/*.pug"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
     "eslint": "^4.12.1",
     "eslint-config-google": "^0.9.1",
     "express": "^4.16.2",
-    "http": "0.0.0"
+    "http": "0.0.0",
+    "pug": "^2.0.0-rc.4",
+    "pug-cli": "1.0.0-alpha6"
   }
 }

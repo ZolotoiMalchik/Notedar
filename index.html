@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./components/app/app.css">
 	<link rel="stylesheet" href="./components/calendarcell/calendarcell.css">
 	<link rel="stylesheet" href="./components/calendar/calendar.css">
+	<link rel="stylesheet" href="./components/note/note.css">
+	<link rel="stylesheet" href="./components/notedisplay/notedisplay.css">
+	<link rel="stylesheet" href="./components/noteinput/noteinput.css">
+
 	<title>Calendar</title>
 </head>
 <body>
 	<div class="js-container"></div>
-	<script type="module" src="./components/app/app.js"></script>
+	<script type="module">
+		import {App} from "./components/app/app.js";
+
+		new App().insertApp(document.querySelector('.js-container'));
+	</script>
 </body>
 </html>
