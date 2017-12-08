@@ -11,7 +11,7 @@ export class NoteDisplay {
 
 	getHTML() {
 		return this.data.map((message) => {
-			return `<div><span class="note__name">${message.name}</span>
+			return `<div class="nodedisplay__note"><span class="note__name">${message.name}</span>
 			<p class="note__text">${message.text}</p></div>`;
 		}).join('');
 	}

@@ -1,8 +1,12 @@
 .notedisplay {
-
+	padding: 0.6rem;
+}
+.notedisplay .nodedisplay__note {
+border-bottom: 1px solid grey;
+padding-top: 1rem;
 }
 .notedisplay .note__name {
-
+font-weight: bold;
 }
 .notedisplay .note__text {
 

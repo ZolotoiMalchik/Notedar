@@ -9,7 +9,7 @@
 	width: inherit;
 	text-align: center;
 	height: inherit;
-	transition: width 230ms, height 230ms;
+	/* transition: width 230ms, height 230ms; */
 }
 .calendar__cell .cell__wrapper .cell__num {
 	font-size: 1.2rem;
@@ -18,6 +18,6 @@
 .calendar__cell .cell__wrapper:hover {
 	cursor: pointer;
 	background: lightblue;
-	width: 5rem;
+	/* width: 5rem; */
 	/* height: 33px; */
 }
