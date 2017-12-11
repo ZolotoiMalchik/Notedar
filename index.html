@@ -13,6 +13,20 @@
 </head>
 <body>
 	<div class="js-container"></div>
+	
+	<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyDM0n4n4Q7M1YrLizMksWELXv-Xe7dRu30",
+	    authDomain: "notedar.firebaseapp.com",
+	    databaseURL: "https://notedar.firebaseio.com",
+	    projectId: "notedar",
+	    storageBucket: "notedar.appspot.com",
+	    messagingSenderId: "878319935388"
+	  };
+	  firebase.initializeApp(config);
+	</script>
 	<script type="module">
 		import {App} from "./components/app/app.js";
 
