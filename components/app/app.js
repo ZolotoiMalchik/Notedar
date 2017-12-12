@@ -62,6 +62,7 @@ export class App {
 	_getData (data) {
 		let result = [];
 		let items = data.val();
+		this.note.display.data = [];
 			for (let item in items) {
 				result.push(items[item]);
 				this.note.display.addData(items[item]);
