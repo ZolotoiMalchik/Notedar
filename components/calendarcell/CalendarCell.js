@@ -21,7 +21,10 @@ export class CalendarCell {
 	}
 
 	onClick (e) {
-		e.cellClick = true;
+		e.cellClick = {
+			state: true,
+			num: this.num
+		};
 		/*e.preventDefault();
 
 		let event = new Event("cellClick", {bubbles: true});
