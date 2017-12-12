@@ -48,8 +48,12 @@ export class App {
 		this.calendar.el.classList.toggle("hidden-calendar");
 		this.note.el.classList.toggle('display');
 		this.el.querySelector(".app__back-btn").classList.toggle("back-btn_hide");
-
-		this.database.getData('/notes/1984618/', this._getData.bind(this));
+		
+		if (e.cellClick) {
+			let obj = e.CellClick;
+			let ref = '' + obj.year + obj.month + obj.num;
+			this.database.getData('/notes/' + ref + '/', this._getData.bind(this));
+		}
 	}
 
 	onBackBtnClick (e) {
