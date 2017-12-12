@@ -15,44 +15,18 @@
 	<div class="js-container"></div>
 	
 	<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyDM0n4n4Q7M1YrLizMksWELXv-Xe7dRu30",
-	    authDomain: "notedar.firebaseapp.com",
-	    databaseURL: "https://notedar.firebaseio.com",
-	    projectId: "notedar",
-	    storageBucket: "notedar.appspot.com",
-	    messagingSenderId: "878319935388"
-	  };
-	  firebase.initializeApp(config);
-	  firebase.auth().signInAnonymously().catch(function(error) {
-	  // Handle Errors here.
-	  var errorCode = error.code;
-	  var errorMessage = error.message;
-	  // ...
-		  console.log("AUTH ERROR", errorCode, errorMessage);
-	});
-	firebase.auth().onAuthStateChanged(function(user) {
-	  if (user) {
-	    // User is signed in.
-	    var isAnonymous = user.isAnonymous;
-	    var uid = user.uid;
-	    // ...
-		  console.log("USER SIGN", uid, isAnonymous);
-	  } else {
-	    // User is signed out.
-	    // ...
-		  console.log("USER SIGN OUT");
-	  }
-	  // ...
-		console.log("SOME OTHER");
-	});
-	</script>
+	<!-- <script type="module">
+		import {Data} from "./components/database/database.js";
+	
+		new Data().init();
+	  
+	</script> -->
 	<script type="module">
 		import {App} from "./components/app/app.js";
 
-		new App().insertApp(document.querySelector('.js-container'));
+		/*new App().insertApp(document.querySelector('.js-container'));*/
+		window.app = new App();
+		window.app.init(document.querySelector('.js-container'));
 	</script>
 </body>
 </html>

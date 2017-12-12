@@ -2,10 +2,10 @@ import {NoteInput} from '../../components/noteinput/NoteInput.js';
 import {NoteDisplay} from '../../components/notedisplay/NoteDisplay.js';
 
 export class Note {
-	constructor() {
+	constructor(data) {
 		this.el = document.createElement('div');
 		this.el.className = 'note';
-		this.data = [
+		this.data = data || [
 		{name: 'Первая заметка', text: 'Херачу компоненты без остановки!'},
 		{name: 'Вторая заметка', text: 'Остановите меня кто-нибудь!!!'}];
 
