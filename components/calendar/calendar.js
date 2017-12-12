@@ -88,10 +88,15 @@ export class Calendar {
 
 	onCellClick (e) {
 		console.log("CELL CLICK", e.target, e.currentTarget, e.cellClick);
-		if (e.cellClick) {
+		if (e.cellClick.state) {
 			//this.el.classList.add("hidden-calendar");
 
 			let event = new Event("cellClick", {bubbles: true});
+			event.cellClick = {
+				year: this.titleYear,
+				month: this._curMonth,
+				num: e.cellClick.num
+			};
 			this.el.dispatchEvent(event);
 		}
 	}
