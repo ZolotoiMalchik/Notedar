@@ -1,3 +1,26 @@
+body {
+	overflow: hidden;
+}
+.js-container {
+	/* width: 600px;
+	height: 200px;
+	position: relative;
+	overflow: auto; */
+}
+.app {
+	/* width: 100%; */
+	/* max-width: 1000px;
+	margin: 0 auto; */
+	/* position: absolute;
+	top: 0;
+	left: 0; */
+	overflow: auto;
+	
+}
+
+.app.app-overflow {
+	overflow: hidden;
+} 
 .app .btn-wrapper {
 	background: green;
 }

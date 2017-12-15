@@ -1,0 +1,12 @@
+.calendar__table {
+	width: 100%;
+	min-width: 270px;
+	border-collapse: collapse;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+	.calendar__table thead {
+		display: none;
+	}
+}

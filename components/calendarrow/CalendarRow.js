@@ -1,15 +1,16 @@
 import {CalendarCell} from '../../components/calendarcell/CalendarCell.js';
 
 export class CalendarRow {
-	constructor(data, count = 7) {
+	constructor(data, header = false, count = 7) {
 		this.el = document.createElement('tr');
+		this.el.className = header ? 'tr-header': 'tr-row';		
 		this.count = count;
 		this.data = data;
 	}
 
 	render() {
 		for (let i = 0; i < this.count; i += 1) {
-			new CalendarCell(this.data[i]).insertCell(this.el);
+			new CalendarCell(i, this.data[i]).insertCell(this.el);
 		}
 	}
 
