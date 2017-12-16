@@ -17,8 +17,12 @@ export class Calendar {
 	render() {
 		this.el.innerHTML = `<div class="calendar__cnt">
 			<div class="calendar__title">
-				<span class="title__year">${this.titleYear}</span>
-				<span class="title__month">${this.titleMonth}</span>
+				<div class="title__year">
+					<span data-year="${this.titleYear}">${this.titleYear}</span>
+				</div>
+				<div class="title__month">
+					<span>${this.titleMonth}</span>
+				</div>
 			</div>
 			<div class="table__cnt"></div>
 		</div>`;

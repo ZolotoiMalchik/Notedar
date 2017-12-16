@@ -8,15 +8,17 @@ export class CalendarTable {
 		this.count = count;
 		this.days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 
-		this.el.innerHTML = `<tbody class="table__inner"></tbody>`;
+		this.el.innerHTML = `
+		<thead class="table__inner-head"></thead>
+		<tbody class="table__inner-body"></tbody>`;
 	}
 
 	render(title = false) {
 		if (title) {
-			new CalendarRow(this.days).insertRow(this.el.querySelector('.table__inner'));
+			new CalendarRow(this.days, true).insertRow(this.el.querySelector('.table__inner-head'));
 		} else {
 			this.data.forEach((rowData) => {
-				new CalendarRow(rowData).insertRow(this.el.querySelector('.table__inner'));
+				new CalendarRow(rowData).insertRow(this.el.querySelector('.table__inner-body'));
 			});
 		}
 	}

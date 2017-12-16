@@ -1,7 +1,7 @@
 export class Data {
 	constructor(app) {
 		this.app = app;
-		this.core = firebase;
+		this.core = /*firebase ||*/ null;
 		this.config = {
 			apiKey: 'AIzaSyDM0n4n4Q7M1YrLizMksWELXv-Xe7dRu30',
 		    authDomain: 'notedar.firebaseapp.com',
@@ -14,6 +14,10 @@ export class Data {
 
 	init() {
 		let that = this;
+		if (this.core === null) {
+			return;
+		}
+		
 		this.core.initializeApp(this.config);
 		this.core.auth().signInAnonymously().catch(function(error) {
 		  // Handle Errors here.
