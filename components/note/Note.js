@@ -25,7 +25,7 @@ export class Note {
 		container.append(this.el);
 	}
 
-	onNoteInputSubmit (item) {
+	onNoteInputSubmit(item) {
 		this.display.addData(item);
 		this.render();
 	}

@@ -15,11 +15,22 @@ export class NoteInput {
 		</form>`;
 	}
 
-	_onSubmit (e) {
+	_onSubmit(e) {
 		e.preventDefault();
-		this.onSubmit({
+
+		let event = new Event('displaySubmit', {bubbles: true});
+		event.submit = {item: {
 			text: e.target.querySelector('textarea').value,
 			name: e.target.querySelector('.form__name').value
-		});
+		}};
+
+		console.log('_Submit', event);
+		this.el.dispatchEvent(event);
+		e.target.querySelector('textarea').value = '';
+		e.target.querySelector('.form__name').value = '';
+		/* this.onSubmit({
+			text: e.target.querySelector('textarea').value,
+			name: e.target.querySelector('.form__name').value
+		});*/
 	}
 }

@@ -16,7 +16,7 @@ export class NoteDisplay {
 		}).join('');
 	}
 
-	addData (item) {
+	addData(item) {
 		this.data.push(item);
 	}
 }

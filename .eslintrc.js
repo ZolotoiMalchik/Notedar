@@ -7,6 +7,7 @@ module.exports = {
     'rules': {
         'comma-dangle': [2, 'never'],
         'require-jsdoc': 0,
-        'max-len': [1, 140]
+        'max-len': [1, 140],
+        'no-tabs': 0
     }
 };

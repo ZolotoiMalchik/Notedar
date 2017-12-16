@@ -11,7 +11,7 @@ export class Calendar {
 
 
 		this._setData();
-		this.el.addEventListener("click", this.onCellClick.bind(this));
+		this.el.addEventListener('click', this.onCellClick.bind(this));
 	}
 
 	render() {
@@ -86,12 +86,12 @@ export class Calendar {
 		return this.data;
 	}
 
-	onCellClick (e) {
-		console.log("CELL CLICK", e.target, e.currentTarget, e.cellClick);
+	onCellClick(e) {
+		console.log('CELL CLICK', e.target, e.currentTarget, e.cellClick);
 		if (e.cellClick.state) {
-			//this.el.classList.add("hidden-calendar");
-
-			let event = new Event("cellClick", {bubbles: true});
+			// this.el.classList.add("hidden-calendar");
+			this._curNum = e.cellClick.num;
+			let event = new Event('cellClick', {bubbles: true});
 			event.cellClick = {
 				year: this.titleYear,
 				month: this._curMonth,
