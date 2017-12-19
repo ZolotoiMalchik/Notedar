@@ -1,6 +1,8 @@
 .calendar__cell {
 	position: relative;
 	transition: top 1000ms, left 1000ms;
+	width: 2%;
+	height: 15%;
 }
 .calendar__cell:not(.calendar__cell_header):not(.calendar__cell_empty) {
 		background: #E3CEC9FF;
@@ -21,15 +23,15 @@
 
 
 .calendar__cell .cell__wrapper {
-	padding: 0.65rem 0.6rem;
+	padding: 20px 0;
 	/* border: 1px solid #a9f7a9; */
-	width: inherit;
+	width: 100%;
 	text-align: center;
-	height: 45px;
+	height: 100%;
 	/* transition: padding 300ms; */
 }
 .calendar__cell .cell__wrapper .cell__num {
-	font-size: 2rem;
+	font-size: 100%;
 	/* background: #F9B305B1; */
 	width: 100%;
 	/* display: block; */

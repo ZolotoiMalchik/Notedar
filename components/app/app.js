@@ -22,7 +22,7 @@ export class App {
 		this.database.init();
 
 		this.calendar = new Calendar();
-		this.calendar.setDate(new Date(1984, 6));
+		//this.calendar.setDate(new Date(1984, 6));
 		this.note = new Note();
 		this.el.append(this.calendar.el, this.note.el);
 		this.insertApp(cnt);
@@ -94,10 +94,10 @@ export class App {
 					cell.style.top = cell.oldCoords.top;
 					cell.style.left = cell.oldCoords.left;
 					setTimeout(function() {
-						/*cell.classList.remove('cell_press');
+						cell.classList.remove('cell_press');
 						cell.style.top = "";
 						cell.style.left = "";
-						cell.style.width = "inherit";*/
+						cell.style.width = "inherit";
 						
 					}, 1000);
 					
