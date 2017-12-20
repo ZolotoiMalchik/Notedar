@@ -1,8 +1,36 @@
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('append')) {
+      return;
+    }
+    Object.defineProperty(item, 'append', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function append() {
+        var argArr = Array.prototype.slice.call(arguments),
+          docFrag = document.createDocumentFragment();
+        
+        argArr.forEach(function (argItem) {
+          var isNode = argItem instanceof Node;
+          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+        });
+        
+        this.appendChild(docFrag);
+      }
+    });
+  });
+})([Element.prototype, Document.prototype, DocumentFragment.prototype]);
+
+
+
 import {Data} from '../../components/database/database.js';
 import {Calendar} from '../../components/calendar/calendar.js';
 import {Note} from '../../components/note/Note.js';
 
-export class App {
+import './app.css';
+
+class App {
 	constructor() {
 		this.el = document.createElement('div');
 		this.el.className = 'app';
@@ -141,3 +169,6 @@ export class App {
 			this.note.display.render();
 	}
 }
+
+
+new App().init(document.querySelector('.js-container'));

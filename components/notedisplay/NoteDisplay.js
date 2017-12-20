@@ -1,3 +1,4 @@
+import './notedisplay.css';
 export class NoteDisplay {
 	constructor(data) {
 		this.el = document.createElement('div');

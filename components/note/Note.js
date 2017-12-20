@@ -1,6 +1,6 @@
 import {NoteInput} from '../../components/noteinput/NoteInput.js';
 import {NoteDisplay} from '../../components/notedisplay/NoteDisplay.js';
-
+import './note.css';
 export class Note {
 	constructor(data) {
 		this.el = document.createElement('div');

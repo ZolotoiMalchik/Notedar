@@ -1,5 +1,6 @@
 import {CalendarRow} from '../../components/calendarrow/CalendarRow.js';
 
+import './calendartable.css';
 export class CalendarTable {
 	constructor(data, count = 7) {
 		this.el = document.createElement('table');

@@ -1,5 +1,5 @@
 
-
+import './calendarcell.css';
 export class CalendarCell {
 	constructor(day, num = '') {
 		this.num = num;

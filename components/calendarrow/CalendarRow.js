@@ -1,5 +1,7 @@
 import {CalendarCell} from '../../components/calendarcell/CalendarCell.js';
 
+import './calendarrow.css';
+
 export class CalendarRow {
 	constructor(data, header = false, count = 7) {
 		this.el = document.createElement('tr');

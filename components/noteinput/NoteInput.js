@@ -1,3 +1,4 @@
+import './noteinput.css';
 export class NoteInput {
 	constructor({onSubmit}) {
 		this.el = document.createElement('div');

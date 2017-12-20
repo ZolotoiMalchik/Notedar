@@ -2,6 +2,8 @@
 import {CalendarRow} from "../../components/calendarrow/CalendarRow.js";*/
 import {CalendarTable} from '../../components/calendartable/CalendarTable.js';
 
+import './calendar.css';
+
 export class Calendar {
 	constructor() {
 		this.el = document.createElement('div');
